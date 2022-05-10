@@ -2,6 +2,8 @@ package homework4;
 
 public class StudentTest {
     public static void main(String[] args) {
+        StudentTest studentTest = new StudentTest();
+
         Student ivan = new Student();
         ivan.cardNumber = 1;
         ivan.name = "Иван";
@@ -10,8 +12,7 @@ public class StudentTest {
         ivan.averageMathGrade = 4.5;
         ivan.averageEconomyGrade = 4.1;
         ivan.averageLanguageGrade = 3.8;
-        System.out.println("Средняя оценка студента " + ivan.name + ": "
-                + (ivan.averageMathGrade + ivan.averageEconomyGrade + ivan.averageLanguageGrade) / 3);
+        studentTest.averageGrade(ivan);
 
         Student larisa = new Student();
         larisa.cardNumber = 2;
@@ -21,8 +22,7 @@ public class StudentTest {
         larisa.averageMathGrade = 4.7;
         larisa.averageEconomyGrade = 4.9;
         larisa.averageLanguageGrade = 4.4;
-        System.out.println("Средняя оценка студента " + larisa.name + ": "
-                + (larisa.averageMathGrade + larisa.averageEconomyGrade + larisa.averageLanguageGrade) / 3);
+        studentTest.averageGrade(larisa);
 
         Student semen = new Student();
         semen.cardNumber = 4;
@@ -32,8 +32,12 @@ public class StudentTest {
         semen.averageMathGrade = 3.5;
         semen.averageEconomyGrade = 3.8;
         semen.averageLanguageGrade = 5.0;
-        System.out.println("Средняя оценка студента " + semen.name + ": "
-                + (semen.averageMathGrade + semen.averageEconomyGrade + semen.averageLanguageGrade) / 3);
+        studentTest.averageGrade(semen);
+    }
+
+    void averageGrade(Student student) {
+        System.out.println("Средняя оценка студента " + student.name + ": " +
+                (student.averageMathGrade + student.averageEconomyGrade + student.averageLanguageGrade) / 3);
     }
 }
 
