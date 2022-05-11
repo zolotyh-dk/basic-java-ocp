@@ -4,21 +4,11 @@ public class StudentTest {
     public static void main(String[] args) {
         StudentTest studentTest = new StudentTest();
 
-        Student ivan = new Student();
-        ivan.cardNumber = 1;
-        ivan.name = "Иван";
-        ivan.surname = "Топоров";
-        ivan.course = 3;
-        ivan.averageMathGrade = 4.5;
-        ivan.averageEconomyGrade = 4.1;
-        ivan.averageLanguageGrade = 3.8;
+        Student ivan = new Student(1, "Иван", "Топоров", 3
+                , 4.5, 4.1, 3.8);
         studentTest.averageGrade(ivan);
 
-        Student larisa = new Student();
-        larisa.cardNumber = 2;
-        larisa.name = "Лариса";
-        larisa.surname = "Тяпкина";
-        larisa.course = 2;
+        Student larisa = new Student(2, "Лариса", "Тяпкина", 2);
         larisa.averageMathGrade = 4.7;
         larisa.averageEconomyGrade = 4.9;
         larisa.averageLanguageGrade = 4.4;
@@ -49,4 +39,23 @@ class Student {
     double averageMathGrade;
     double averageEconomyGrade;
     double averageLanguageGrade;
+
+    Student(int cardNumber, String name, String surname, int course
+            , double averageMathGrade, double averageEconomyGrade, double averageLanguageGrade) {
+        this.cardNumber = cardNumber;
+        this.name = name;
+        this.surname = surname;
+        this.course = course;
+        this.averageMathGrade = averageMathGrade;
+        this.averageEconomyGrade = averageEconomyGrade;
+        this.averageLanguageGrade = averageLanguageGrade;
+    }
+
+    Student(int cardNumber, String name, String surname, int course) {
+        this(cardNumber, name, surname, course
+                , 0.0, 0.0, 0.0);
+    }
+
+    Student() {
+    }
 }
